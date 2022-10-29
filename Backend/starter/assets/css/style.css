@@ -1,0 +1,11 @@
+.pace {
+    display: none;
+}
+
+.main-style {
+    min-height: 100vh;
+    background: url(../img/cover/Scrum\ board-amico\ \(3\).png ) no-repeat fixed;
+    background-size: 250px;
+    background-position: right bottom;
+    background-color: #ae9d9d;
+}
