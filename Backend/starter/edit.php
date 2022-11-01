@@ -77,7 +77,7 @@ require('database.php');
 				</select>
 				</br>
 				<label for="date" class="d-block">Date:</label>
-				<input class="form-control input-sm   shadow-sm" type="date" name="date" id="editdate" value="<?php echo $row['task_datetime'] ?>">
+				<input class="form-control input-sm   shadow-sm" type="date" name="date" value="<?php echo $row['task_datetime'] ?>">
 				</br>
 				<label for="description" class="d-block">Description:</label>
 				<textarea class="form-control shadow-sm" id="editdescription" name="description" rows="5" cols="33"><?php echo $row['description'] ?></textarea>
