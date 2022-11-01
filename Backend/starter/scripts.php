@@ -6,13 +6,10 @@
 
     //ROUTING
     if(isset($_POST['save']))        saveTask();
-    if(isset($_POST['update']))      updateTask();
     if(isset($_POST['delete']))      deleteTask();
     getTasks();
     function getTasks()
-    {   global $con ;
-        //CODE HERE
-          
+    {   global $con ;    
         //SQL SELECT
         $bdSql="SELECT tasks.id, tasks.title, types.name AS type, priorities.name AS priority, statuses.name AS status, tasks.task_datetime, tasks.description FROM tasks
         inner join priorities On tasks.priority_id=priorities.id
@@ -33,18 +30,15 @@
     function saveTask()
     {
         global $con ;
-        // if(isset($_POST["save"])){
+        
         $title=$_POST['titre'];
         $type=$_POST['type'];
         $priorities=$_POST['propriete'];
         $status=$_POST['status'];
         $date=$_POST['date'];
         $description=$_POST['description'];
-        //}
-       
-       
         //SQL INSERT
-        // require 'database.php';
+     
         $requete="INSERT INTO tasks( title, type_id, priority_id, status_id, task_datetime, description) 
                     VALUES ('$title','$type','$priorities','$status','$date','$description')";
         $query = mysqli_query($con,$requete);
@@ -59,18 +53,18 @@
         $_SESSION['message'] = "Task has been added successfully !";
 		header('location: index.php');
     }
-
-    function updateTask()
-    {
-        //CODE HERE
-        //SQL UPDATE
-        $_SESSION['message'] = "Task has been updated successfully !";
-		header('location: index.php');
-    }
-
     function deleteTask()
     {
+    global $con;
         //CODE HERE
+        if (isset($_GET["id"])){
+            $id=$_GET["id"];
+            $req=$con->prepare("DELETE FROM tasks WHERE id=?");
+            $req->execute(array($id));
+            if($req){
+                echo "suppression avec succes";
+            }
+        }
         //SQL DELETE
         $_SESSION['message'] = "Task has been deleted successfully !";
 		header('location: index.php');
@@ -86,4 +80,4 @@
         echo $data['countTasks'];
     }
 
-?>
+    ?>

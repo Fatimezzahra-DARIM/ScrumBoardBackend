@@ -167,6 +167,7 @@ function editTask(index) {
     editdescription.value = tasks[indexToEdit].description;
 
 }
+
 function updateTask() {
     // GET TASK ATTRIBUTES FROM INPUTS
     let type = undefined;
