@@ -92,8 +92,8 @@ require "scripts.php";
 										<label for="description" class="d-block">Description:</label>
 										<textarea class="form-control m-1  shadow-sm" id="description" name="description" rows="5" cols="33"></textarea>
 										<div class="modal-footer">
-											<button type="button" class="btn shadow-sm" data-dismiss="modal" style="background-color:buttonface">Close</button>
-											<button type="submit" id="button" class="btn shadow-sm text-light-200 " style="background-color: #5d3c3c;" name="save">Save</button>
+											<!-- <button type="button" class="btn shadow-sm" data-dismiss="modal" style="background-color:buttonface">Close</button>
+											<button type="submit" id="button" class="btn shadow-sm text-light-200 " style="background-color: #5d3c3c;" name="save">Save</button> -->
 										</div>
 									</form>
 								</div>
