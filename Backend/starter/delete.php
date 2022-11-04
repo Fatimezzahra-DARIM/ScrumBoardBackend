@@ -2,13 +2,21 @@
     //INCLUDE DATABASE FILE
     require('database.php');
     if (isset($_GET['delete'])){
-            $id=$_GET['id'];
-            $req="DELETE FROM tasks WHERE id=$id";
-            $result=mysqli_query($con,$req);
+        global $con;
+        //CODE HERE
+        if (isset($_GET["id"])) {
+            $id = $_GET["id"];
+            $req = "DELETE FROM tasks WHERE id=$id";
 
-            if($result){
+            $response = mysqli_query($con, $req);
+            if ($response) {
                 echo "suppression avec succes";
-                header('location: index.php') ;
+                
             }
         }
+
+        //SQL DELETE
+        $_SESSION['message'] = "Task has been deleted successfully !";
+        header('location: index.php');
+    }
 ?>

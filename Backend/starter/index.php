@@ -1,5 +1,6 @@
 <?php
 require "scripts.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -135,7 +136,7 @@ require "scripts.php";
 													<span class="bg-red-200 text-black px-4 p-1 rounded"><?= $GLOBALS['tasks'][$i]['type'] ?></span>
 													<span class="bg-light text-black px-3 p-1 rounded"><?= $GLOBALS['tasks'][$i]['priority'] ?></span>
 													<?php echo '<a name="delete" class="bi bi-trash text-danger" href="delete.php?id=' . $GLOBALS['tasks'][$i]['id'] . '&delete=true"></a>'; ?>
-													<?php echo '<a name="edit" class="bi bi-pencil text-dark" href="edit.php?id=' . $GLOBALS['tasks'][$i]['id'] . '"></a>'; ?>
+													<?php echo '<a name="edit" class="bi bi-pencil text-dark p-3" href="edit.php?id=' . $GLOBALS['tasks'][$i]['id'] . '"></a>'; ?>
 												</div>
 											</div>
 									</button>
@@ -175,7 +176,7 @@ require "scripts.php";
 													<span class="bg-red-200 text-black px-4 p-1 rounded"><?= $GLOBALS['tasks'][$i]['type'] ?></span>
 													<span class="bg-light text-black px-3 p-1 rounded"><?= $GLOBALS['tasks'][$i]['priority'] ?></span>
 													<?php echo '<a name="delete" class="bi bi-trash text-danger" href="delete.php?id=' . $GLOBALS['tasks'][$i]['id'] . '&delete=true"></a>'; ?>
-													<?php echo '<a name="edit" class="bi bi-pencil text-dark" href="edit.php?id=' . $GLOBALS['tasks'][$i]['id'] . '"></a>'; ?>
+													<?php echo '<a name="edit" class="bi bi-pencil text-dark p-3" href="edit.php?id=' . $GLOBALS['tasks'][$i]['id'] . '"></a>'; ?>
 												</div>
 											</div>
 									</button>
@@ -214,7 +215,7 @@ require "scripts.php";
 													<span class="bg-red-200 text-black px-4 p-1 rounded"><?= $GLOBALS['tasks'][$i]['type'] ?></span>
 													<span class="bg-light text-black px-3 p-1 rounded"><?= $GLOBALS['tasks'][$i]['priority'] ?></span>
 													<?php echo '<a name="delete" class="bi bi-trash text-danger" href="delete.php?id=' . $GLOBALS['tasks'][$i]['id'] . '&delete=true"></a>'; ?>
-													<?php echo '<a name="edit" class="bi bi-pencil text-dark" href="edit.php?id=' . $GLOBALS['tasks'][$i]['id'] . '"></a>'; ?>
+													<?php echo '<a name="edit" class="bi bi-pencil text-dark p-3" href="edit.php?id=' . $GLOBALS['tasks'][$i]['id'] . '"></a>'; ?>
 												</div>
 											</div>
 									</button>

@@ -6,16 +6,18 @@
 
     //ROUTING
     if(isset($_POST['save']))        saveTask();
-    if(isset($_POST['delete']))      deleteTask();
     getTasks();
     function getTasks()
     {   global $con ;    
         //SQL SELECT
-        $bdSql="SELECT tasks.id, tasks.title, types.name AS type, priorities.name AS priority, statuses.name AS status, tasks.task_datetime, tasks.description FROM tasks
-        inner join priorities On tasks.priority_id=priorities.id
-        inner join statuses On tasks.status_id=statuses.id
-        inner join types On tasks.type_id=types.id order by id desc
-        ";
+        $bdSql= "SELECT tasks.id, tasks.title, types.name AS type, priorities.name AS priority, statuses.name AS status, tasks.task_datetime, tasks.description 
+                FROM 
+                    tasks
+                        inner join priorities On tasks.priority_id=priorities.id
+                        inner join statuses On tasks.status_id=statuses.id
+                        inner join types On tasks.type_id=types.id 
+                        order by title desc
+                ";
         //Select Data From a MySQL Database  
       $board = mysqli_query($con,$bdSql);
       $GLOBALS['tasks'] = array();
@@ -53,22 +55,7 @@
         $_SESSION['message'] = "Task has been added successfully !";
 		header('location: index.php');
     }
-    function deleteTask()
-    {
-    global $con;
-        //CODE HERE
-        if (isset($_GET["id"])){
-            $id=$_GET["id"];
-            $req=$con->prepare("DELETE FROM tasks WHERE id=?");
-            $req->execute(array($id));
-            if($req){
-                echo "suppression avec succes";
-            }
-        }
-        //SQL DELETE
-        $_SESSION['message'] = "Task has been deleted successfully !";
-		header('location: index.php');
-    }
+    
 
     function countTasks($id){
         global $con ;
@@ -80,4 +67,7 @@
         echo $data['countTasks'];
     }
 
+ 
     ?>
+
+    
